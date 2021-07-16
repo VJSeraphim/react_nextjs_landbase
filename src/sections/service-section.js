@@ -36,13 +36,15 @@ const data = {
 };
 
 export default function ServiceSection() {
+  const [videoOpen, setVideoOpen] = useState(false)
+
   const handleClick = (e) => {
     e.preventDefault()
     setVideoOpen(true)
   }
   return (
     <section sx={{variant: 'section.services'}}>
-      <Container sx={StyleSheet.containerBox}>
+      <Container sx={styles.containerBox}>
         <Box sx={styles.thumbnail}>
           <Image src={ServiceThumb} alt="Thumbnail" />
           <Button sx={styles.videoBtn} onClick={handleClick} aria-label="Play Button">
@@ -64,12 +66,16 @@ export default function ServiceSection() {
                   <Heading sx={styles.wrapper.title}>
                     {feature.title}
                   </Heading>
+                  <Text sx={styles.wrapper.subTitle}>
+                    {feature.text}
+                  </Text>
                 </Box>
               </Box>
             })}
           </Grid>
         </Box>
       </Container>
+      <ModalVideo channel="youtube" isOpen={videoOpen} videoId="92volEdYcCQ" onClose={() => setVideoOpen(false)}/>
     </section>
   );
 }
