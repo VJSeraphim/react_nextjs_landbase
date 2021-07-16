@@ -48,9 +48,9 @@ export default function KeyFeature() {
    <section sx={{ variant: 'section.keyFeature' }} id="feature">
     <Container>
       <SectionHeader slogan="Want to see the functions?" title="Meet the features of our product."/>
-      <Grid sx={StyleSheet.grid}>
+      <Grid sx={styles.grid}>
         {data.map((item) => (
-          <FeatureCard key={item.id} src={item.ingSrc} alt={item.altText} title={item.title} text={item.text}/>
+          <FeatureCardColumn key={item.id} src={item.ingSrc} alt={item.altText} title={item.title} text={item.text}/>
         ))}
       </Grid>
     </Container>
