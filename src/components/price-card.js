@@ -1,6 +1,7 @@
 import { Box, Card, Text, Heading, Button } from 'theme-ui';
 import React from 'react';
 import List from './list';
+import { STATUS_RELEASED } from 'react-stickynode';
 
 export default function PriceCard({
   data: {
@@ -14,7 +15,9 @@ export default function PriceCard({
   },
 }) {
   return (
-    <h1>PriceCard</h1>
+    <Card className={header ? 'package__card active' : 'package__card'} sx={styles.pricingBox}>
+      {header && <Text sx={styles.header}>{header}</Text>}
+    </Card>
   );
 }
 
