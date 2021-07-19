@@ -240,11 +240,11 @@ const responsive = {
 };
 
 export default function Package() {
+  const {monthly, annual} = packages
   const [state, setState] = useState({
     active:'monthly',
     pricingPlan: monthly,
   })
-  const { monthly, annual } = packages;
 
   const handlePricingPlan = (plan) => {
     if (plan === annual) {
